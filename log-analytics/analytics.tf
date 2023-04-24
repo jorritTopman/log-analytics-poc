@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-resource "azurerm_log_analytics_workspace" "example" {
+resource "azurerm_log_analytics_workspace" "log" {
   name                = "${var.base_name}-log"
   location            = var.location
   resource_group_name = var.resource_group_name
