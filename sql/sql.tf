@@ -14,7 +14,11 @@ resource "random_string" "random" {
 }
 
 resource "azurerm_storage_account" "strgaudit" {
+<<<<<<< HEAD
   name                     = "${var.strg_name}${random_string.random.result}strg"
+=======
+  name                     = "${var.base_name}${random_string.random.result}strg"
+>>>>>>> 36b95cedf8ea9979b22a74025b3f3fb8e7c38287
   location                 = var.location
   resource_group_name      = var.resource_group_name
   account_tier             = "Standard"
@@ -62,4 +66,8 @@ resource "azurerm_monitor_diagnostic_setting" "sqldb_diagnostics" {
       enabled = false
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 36b95cedf8ea9979b22a74025b3f3fb8e7c38287
 }

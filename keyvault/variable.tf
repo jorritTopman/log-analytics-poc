@@ -14,8 +14,11 @@ variable "base_name" {
     type = string
     description = "the base name"
 }
+<<<<<<< HEAD
 
 variable "log_analytics_workspace_id" {
   type    = any
   default = []
 }
+=======
+>>>>>>> 36b95cedf8ea9979b22a74025b3f3fb8e7c38287

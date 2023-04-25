@@ -18,10 +18,13 @@ variable "base_name" {
 variable "log_analytics_workspace_id" {
   type    = any
   default = []
+<<<<<<< HEAD
 }
 
 variable "strg_name" {
   type        = string
   description = "the storage account base name"
   default     = "strg"
+=======
+>>>>>>> 36b95cedf8ea9979b22a74025b3f3fb8e7c38287
 }
