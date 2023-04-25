@@ -1,23 +1,18 @@
 variable "location" {
   description = "Resource Group Location"
   type = string
-  #default = "north europe"
+  default = "north europe"
 }
 
 variable "resource_group_name" {
   description = "Resource Group Name"
   type = string
+   default = "something-jorrit"
 }
 
 variable "base_name" {
     type = string
-    description = "the storage account base name"
-}
-
-variable "strg_name" {
-  type        = string
-  description = "the storage account base name"
-  default     = "strg"
+    description = "the base name"
 }
 
 variable "log_analytics_workspace_id" {

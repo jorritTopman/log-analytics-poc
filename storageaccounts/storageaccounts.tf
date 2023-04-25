@@ -32,4 +32,12 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "dhl-filesystem" {
     hello = "aGVsbG8="
   }
 }
+/*
+resource "azurerm_monitor_diagnostic_setting" "storage_blob" {
+  name                       = "storageblobladiagnostics"
+  target_resource_id         = azurerm_storage_account.dhl-strg.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+}
+*/
+
 
