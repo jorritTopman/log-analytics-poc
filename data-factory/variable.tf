@@ -13,3 +13,8 @@ variable "base_name" {
     type = string
     description = "the storage account base name"
 }
+
+variable "log_analytics_workspace_id" {
+  type    = any
+  default = []
+}

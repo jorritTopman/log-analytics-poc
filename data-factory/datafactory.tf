@@ -13,18 +13,55 @@ resource "azurerm_data_factory" "df" {
   resource_group_name = var.resource_group_name
 }
 
-<<<<<<< HEAD
 resource "azurerm_data_factory_integration_runtime_azure_ssis" "ir" {
   name            = "${var.base_name}-ir"
   data_factory_id = azurerm_data_factory.df.id
   location        = var.location
 
   node_size = "Standard_D8_v3"
-=======
-resource "azurerm_data_factory_integration_runtime_azure" "example" {
-  name            = "${var.base_name}-ir"
-  data_factory_id = azurerm_data_factory.df.id
-  location        = var.location
->>>>>>> 36b95cedf8ea9979b22a74025b3f3fb8e7c38287
 }
 
+resource "azurerm_monitor_diagnostic_setting" "mon_df" {
+  name                       = azurerm_data_factory.df.name
+  target_resource_id         = azurerm_data_factory.df.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+
+  enabled_log {
+    category = "ActivityRuns"
+    #enabled  = true
+
+    retention_policy {
+      enabled = true
+      days    = 7
+    }
+  }
+
+  enabled_log {
+    category = "PipelineRuns"
+    #enabled  = true
+
+    retention_policy {
+      enabled = true
+      days    = 7
+    }
+  }
+
+  enabled_log {
+    category = "TriggerRuns"
+   #enabled  = true
+
+    retention_policy {
+      enabled = true
+      days    = 7
+    }
+  }
+
+  metric {
+    category = "AllMetrics"
+
+    retention_policy {
+      enabled = true
+      days    = 7
+    }
+  }
+}
