@@ -15,13 +15,6 @@ variable "base_name" {
   default     = "joreri"
 }
 
-/*
-variable "log_analytics_workspace_id" {
-    type  = string
-    description = "id of log_analytics_id "
-}
-
-*/
 variable "strg_name" {
   type        = string
   description = "the storage account base name"
