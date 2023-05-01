@@ -19,5 +19,44 @@ resource "azurerm_data_factory_integration_runtime_azure_ssis" "ir" {
   location        = var.location
 
   node_size = "Standard_D8_v3"
-}
 
+
+  enabled_log {
+      category = "ActivityRuns"
+      #enabled  = true
+
+      retention_policy {
+        enabled = true
+        days    = 7
+      }
+    }
+
+    enabled_log {
+      category = "PipelineRuns"
+      #enabled  = true
+
+      retention_policy {
+        enabled = true
+        days    = 7
+      }
+    }
+
+    enabled_log {
+      category = "TriggerRuns"
+    #enabled  = true
+
+      retention_policy {
+        enabled = true
+        days    = 7
+      }
+    }
+
+    metric {
+      category = "AllMetrics"
+
+      retention_policy {
+        enabled = true
+        days    = 7
+      }
+    }
+}
