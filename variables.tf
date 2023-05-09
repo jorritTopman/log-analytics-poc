@@ -20,3 +20,9 @@ variable "strg_name" {
   description = "the storage account base name"
   default     = "strg"
 }
+
+variable "resource_group_name" {
+  type = string
+  description = "resource group name"
+  default = "rg-sandbox-jorrit"
+}
