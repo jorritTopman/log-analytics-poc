@@ -1,5 +1,6 @@
 #resource group reation module
-/*module "resource_group" {
+/*
+module "resource_group" {
   source    = "./resource_group"
   base_name = local.base_name
   location  = "westeurope"
@@ -53,5 +54,6 @@ module "databricks" {
   resource_group_name = var.resource_group_name
   location            = "westeurope"
 }
+
 
 

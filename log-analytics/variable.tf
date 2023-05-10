@@ -7,15 +7,10 @@ variable "location" {
 variable "resource_group_name" {
   description = "Resource Group Name"
   type = string
-  default = "something-jorrit"
+   default = "something-jorrit"
 }
 
 variable "base_name" {
     type = string
     description = "the base name"
-}
-
-variable "log_analytics_workspace_id" {
-  type    = any
-  default = []
 }
