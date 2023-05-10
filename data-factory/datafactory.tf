@@ -58,7 +58,7 @@ resource "azurerm_monitor_diagnostic_setting" "adf_diagnostics" {
       }
     }
 
-    metric {
+    metric { 
       category = "AllMetrics"
 
       retention_policy {

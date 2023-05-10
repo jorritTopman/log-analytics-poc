@@ -55,5 +55,12 @@ module "databricks" {
   location            = "westeurope"
 }
 
+module "databricks" {
+  source              = "./virtual-machine"
+  base_name           = local.base_name
+  resource_group_name = var.resource_group_name
+  location            = "westeurope"
+  log_analytics_workspace_id = module.log-analytics.log_analytics_workspace_id
+}
 
 
