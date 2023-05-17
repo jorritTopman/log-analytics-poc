@@ -18,3 +18,8 @@ variable "log_analytics_workspace_id" {
   type    = any
   default = []
 }
+
+variable "laws_key" {
+  type    = any
+  default = []
+}

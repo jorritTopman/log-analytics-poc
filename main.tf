@@ -55,12 +55,14 @@ module "databricks" {
   location            = "westeurope"
 }
 
-module "databricks" {
+module "virtual-machine" {
   source              = "./virtual-machine"
   base_name           = local.base_name
   resource_group_name = var.resource_group_name
   location            = "westeurope"
   log_analytics_workspace_id = module.log-analytics.log_analytics_workspace_id
+  laws_key = module.log-analytics.laws_key #module.log-analytics.log.laws_key
+  depends_on = [ module.log-analytics ]
 }
 
 

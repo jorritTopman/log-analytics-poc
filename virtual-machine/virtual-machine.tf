@@ -37,8 +37,8 @@ resource "azurerm_windows_virtual_machine" "vm1" {
   name                = "${var.base_name}-vm1"
   location            = var.location
   resource_group_name = var.resource_group_name
-  size                = "Standard_F2"
-  admin_username      = "admin"
+  size                = "standard_d1_v2"
+  admin_username      = "dadpuser"
   admin_password      = "Test@1980muur"
   network_interface_ids = [
     azurerm_network_interface.example.id,
@@ -70,4 +70,10 @@ resource "azurerm_virtual_machine_extension" "omsagentwin" {
       "workspaceId": "${var.log_analytics_workspace_id}"
     }
   SETTINGS
+
+  protected_settings = <<PROTECTED_SETTINGS
+    {
+      "workspaceKey": "${var.laws_key}"
+    }
+    PROTECTED_SETTINGS
 }

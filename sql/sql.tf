@@ -35,10 +35,10 @@ resource "azurerm_mssql_database" "dba" {
   server_id      = azurerm_mssql_server.dbsrv.id
   collation      = "SQL_Latin1_General_CP1_CI_AS"
   license_type   = "LicenseIncluded"
-  max_size_gb    = 4
-  read_scale     = true
+  max_size_gb    = 250
+  read_scale     = false
   sku_name       = "S0"
-  zone_redundant = true
+  zone_redundant = false
 }
 
 resource "azurerm_monitor_diagnostic_setting" "sqldb_diagnostics" {
@@ -48,7 +48,7 @@ resource "azurerm_monitor_diagnostic_setting" "sqldb_diagnostics" {
   #storage_account_id =azurerm_storage_account.storage.id
 
   enabled_log {
-    category = "AuditEvent"
+    category = "Errors"
 
     retention_policy {
       enabled = false
